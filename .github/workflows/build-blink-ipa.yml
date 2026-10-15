@@ -30,9 +30,9 @@ jobs:
     runs-on: macos-15
     timeout-minutes: 150
     steps:
-      - name: Use the newest Xcode 16
+      - name: Use the newest Xcode (Blink needs the iOS 26 SDK)
         run: |
-          XC=$(ls -d /Applications/Xcode_16*.app | sort -V | tail -1)
+          XC=$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1)
           sudo xcode-select -s "$XC/Contents/Developer"
           xcodebuild -version
           sw_vers
